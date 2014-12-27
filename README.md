@@ -41,9 +41,9 @@ where $HOME referes to your home directory
 * Add your configuration which is a pair of key and a command to execute on pressing that key.  
 ```
 "sudo backlight -u"
-Control + Right
- "sudo backlight -d"
-Control + Left
+    Control + Right
+"sudo backlight -d"
+    Control + Left
 ```  
 * Save the file and close it.
 * Run xbindkeys  
