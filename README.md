@@ -54,3 +54,9 @@ where $HOME referes to your home directory
 
 ##Devices
 Checked in Ubuntu 14.04 64-bit Linux on Dell Inspiron N4010. It will work in all Dell Inspirons I guess. About other laptops I don't know SORRY! 
+
+###Author
+[Arunvel Sriram](http://github.com/arunvelsriram) 
+
+###Contact
+Email : arunvelsriram@gmail.com
