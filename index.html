@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>BrightnessControl by arunvelsriram</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>BrightnessControl</h1>
+        <h2>Shell script to control screen brightness in Ubuntu Linux</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/arunvelsriram/BrightnessControl/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/arunvelsriram/BrightnessControl/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/arunvelsriram/BrightnessControl" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="brightnesscontrol" class="anchor" href="#brightnesscontrol" aria-hidden="true"><span class="octicon octicon-link"></span></a>BrightnessControl</h1>
+
+<p>Shell script to control screen brightness in Ubuntu Linux.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>$ sudo backlight.sh -u | -d
+</code></pre>
+
+<p>-u Increases brightness<br>
+-d Decrease brightness</p>
+
+<h2>
+<a id="more-fun" class="anchor" href="#more-fun" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Fun</h2>
+
+<h3>
+<a id="creating-your-own-command" class="anchor" href="#creating-your-own-command" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating your own command</h3>
+
+<ul>
+<li>Move the script backlight.sh to <em>/usr/bin/</em><br>
+<code>$ sudo mv backlight.sh /usr/bin/backlight</code>
+</li>
+<li>Now its possible to execute the script from anywhere in the commandline without the .sh extension<br>
+<code>$ sudo backlight -u | -d</code>
+</li>
+</ul>
+
+<h3>
+<a id="executing-the-script-without-password" class="anchor" href="#executing-the-script-without-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>Executing the script without password</h3>
+
+<ul>
+<li>As the script requires more privileges, we have to run it with <em>sudo</em> and type in the password</li>
+<li>To avoid this lets modify the <em>sudoers file</em> to allow the current user to execute the command without password</li>
+<li>Open the <em>sudoers file</em>:<br>
+<code>$ sudo visudo</code>
+</li>
+<li>Add the following line to the file<br>
+<code>username ALL=(ALL) NOPASSWD: /usr/bin/backlight</code><br>
+where username is your username</li>
+<li>Press Control + X to save the file and reboot your system</li>
+<li>After the reboot you can run the command without entering the password</li>
+</ul>
+
+<h3>
+<a id="control-brightness-on-keypress" class="anchor" href="#control-brightness-on-keypress" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control brightness on keypress</h3>
+
+<ul>
+<li>It makes our life easier if we are able to raise/lower brightness using keyboard. It's very easy.</li>
+<li>Install <em>xbindkeys</em> using the following command:<br>
+<code>$ sudo apt-get install xbindkeys</code>
+</li>
+<li>Next we have to create a configuration file for <em>xbindkeys</em> in the home directory<br>
+<code>$ xbindkeys --defaults &gt; $HOME/.xbindkeysrc</code><br>
+where $HOME referes to your home directory</li>
+<li>Open the configuration file:<br>
+<code>$ nano .xbindkeysrc</code>
+</li>
+<li>Add your configuration which is a pair of key and a command to execute on pressing that key.<br>
+</li>
+</ul>
+
+<pre><code>"sudo backlight -u"
+    Control + Right
+"sudo backlight -d"
+    Control + Left
+</code></pre>
+
+<ul>
+<li>Save the file and close it.</li>
+<li>Run xbindkeys<br>
+<code>$ xbindkeys</code>
+</li>
+<li>Now pressing <em>Control + Right</em> should increase the brightness and <em>Control + Right</em> decreases it.</li>
+<li>To make <em>xbindkeys</em> stop listening to key presses:<br>
+<code>$ killall -HUP xbindkeys</code>
+</li>
+</ul>
+
+<h2>
+<a id="devices" class="anchor" href="#devices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Devices</h2>
+
+<p>Checked in Ubuntu 14.04 64-bit Linux on Dell Inspiron N4010. It will work in all Dell Inspirons I guess. About other laptops I don't know SORRY! </p>
+
+<h3>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h3>
+
+<p><a href="http://github.com/arunvelsriram">Arunvel Sriram</a> </p>
+
+<h3>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h3>
+
+<p>Email : <a href="mailto:arunvelsriram@gmail.com">arunvelsriram@gmail.com</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
