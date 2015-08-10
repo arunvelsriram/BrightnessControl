@@ -60,3 +60,7 @@ Checked in Ubuntu 14.04 64-bit Linux on Dell Inspiron N4010. It will work in all
 
 ###Contact
 Email : arunvelsriram@gmail.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arunvelsriram/brightnesscontrol/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
